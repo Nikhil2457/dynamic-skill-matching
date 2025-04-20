@@ -1,7 +1,11 @@
 import streamlit as st
 import pandas as pd
 import os
+import nltk
+nltk.download('punkt')
+
 from matching import match_skills
+
 
 def load_data():
     """Load data with comprehensive error handling"""
