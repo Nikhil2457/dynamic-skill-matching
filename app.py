@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import nltk
-nltk.download('punkt')
+nltk.data.path.append("./nltk_data")
 
 from matching import match_skills
 

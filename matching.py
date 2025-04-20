@@ -2,6 +2,7 @@ import pandas as pd
 import nltk
 from nltk.tokenize import word_tokenize
 import string
+nltk.data.path.append("./nltk_data")
 
 nltk.download('punkt', quiet=True)
 
