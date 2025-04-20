@@ -1,58 +1,34 @@
 import pandas as pd
-import nltk
-from nltk.tokenize import word_tokenize
 import string
-nltk.data.path.append("./nltk_data")
 
-import os
-from nltk.data import find
-
-NLTK_DIR = os.path.join(os.path.dirname(__file__), "nltk_data")
-nltk.data.path.append(NLTK_DIR)
-
-# Check if punkt is already downloaded; if not, download it to your local nltk_data
-try:
-    find("tokenizers/punkt")
-except LookupError:
-    nltk.download("punkt", download_dir=NLTK_DIR)
-
+def simple_tokenize(text):
+    """Tokenize using only built-in string methods"""
+    text = text.lower().strip()
+    for punct in string.punctuation:
+        text = text.replace(punct, '')
+    return text.split()
 
 def extract_skills(text):
-    """Improved skill extraction that handles comma-separated skills and filters out non-skill tokens"""
+    """Improved skill extraction without NLTK"""
     text = text.lower().strip()
-    # Handle both comma and "and" separated skills
     skills = []
     for part in text.split(','):
         skills.extend(part.split(' and '))
-    # Clean and tokenize, removing non-skill tokens
-    return set(word.strip() for word in word_tokenize(' '.join(skills)) if word.strip() and word not in string.punctuation)
+    return set(word.strip() for word in simple_tokenize(' '.join(skills)) if word.strip())
 
 def match_skills(users, project):
-    """Precise skill matching that respects project requirements"""
-    # Get required skills from project
+    """Match user skills to project requirements"""
     required_skills = extract_skills(project['requirements'])
     
     if not required_skills:
-        return pd.DataFrame()  # If no required skills are specified, return an empty DataFrame
-    
-    # Calculate match score for each user
+        return pd.DataFrame()
+
     def calculate_score(user_skills):
         user_skills_set = extract_skills(user_skills)
-        # Percentage of required skills matched
-        if not required_skills:
-            return 0
-        return len(user_skills_set & required_skills) / len(required_skills)
+        return len(user_skills_set & required_skills) / len(required_skills) if required_skills else 0
     
     users['match_score'] = users['skills'].apply(calculate_score)
-    
-    # Sort by match score (descending) then experience (descending)
-    sorted_users = users.sort_values(
-        by=['match_score', 'experience'], 
-        ascending=[False, False]
-    ).reset_index(drop=True)
-
-    # Filter out users with zero match score
+    sorted_users = users.sort_values(by=['match_score', 'experience'], ascending=[False, False]).reset_index(drop=True)
     sorted_users = sorted_users[sorted_users['match_score'] > 0]
     
     return sorted_users
-
