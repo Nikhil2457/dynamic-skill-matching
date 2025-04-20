@@ -1,0 +1,101 @@
+project_id,requirements
+101,Python
+102,Java
+103,JavaScript
+104,SQL
+105,Machine Learning
+106,React
+107,Angular
+108,Data Analysis
+109,Python and Django
+110,Java and Spring Boot
+111,JavaScript and Node.js
+112,SQL and PostgreSQL
+113,Machine Learning and Python
+114,React and Redux
+115,Angular and TypeScript
+116,Data Analysis and SQL
+117,Python and Flask
+118,Java and Hibernate
+119,JavaScript and Express.js
+120,SQL and MySQL
+121,Machine Learning and TensorFlow
+122,React and Next.js
+123,Angular and RxJS
+124,Data Analysis and R
+125,Python and FastAPI
+126,Java and Microservices
+127,JavaScript and TypeScript
+128,SQL and NoSQL
+129,Machine Learning and PyTorch
+130,React and GraphQL
+131,Angular and Firebase
+132,Data Analysis and Pandas
+133,Python and OpenCV
+134,Java and Android
+135,JavaScript and Vue.js
+136,SQL and SQLite
+137,Machine Learning and NLP
+138,React and Material UI
+139,Angular and NgRx
+140,Data Analysis and Excel
+141,Python and Scikit-learn
+142,Java and Kotlin
+143,JavaScript and Webpack
+144,SQL and MongoDB
+145,Machine Learning and Computer Vision
+146,React and Jest
+147,Angular and Jasmine
+148,Data Analysis and Power BI
+149,Python and NumPy
+150,Java and Gradle
+151,JavaScript and D3.js
+152,SQL and Oracle
+153,Machine Learning and Keras
+154,React and Storybook
+155,Angular and Karma
+156,Data Analysis and Tableau
+157,Python and Pandas
+158,Java and Maven
+159,JavaScript and Cypress
+160,SQL and T-SQL
+161,Machine Learning and XGBoost
+162,React and Gatsby
+163,Angular and Protractor
+164,Data Analysis and SPSS
+165,Python and Requests
+166,Java and JUnit
+167,JavaScript and ESLint
+168,SQL and PL/SQL
+169,Machine Learning and OpenCV
+170,React and React Router
+171,Angular and Angular Material
+172,Data Analysis and SAS
+173,Python and Celery
+174,Java and Lombok
+175,JavaScript and Babel
+176,SQL and Cassandra
+177,Machine Learning and Scikit-learn
+178,React and Redux Toolkit
+179,Angular and NGRX
+180,Data Analysis and Looker
+181,Python and BeautifulSoup
+182,Java and Jackson
+183,JavaScript and Axios
+184,SQL and Snowflake
+185,Machine Learning and Spark
+186,React and Chakra UI
+187,Angular and PrimeNG
+188,Data Analysis and Matplotlib
+189,Python and PySpark
+190,Java and JPA
+191,JavaScript and Lodash
+192,SQL and BigQuery
+193,Machine Learning and LightGBM
+194,React and Formik
+195,Angular and Scully
+196,Data Analysis and Seaborn
+197,Python and Scrapy
+198,Java and JDBC
+199,JavaScript and Moment.js
+200,SQL and Redshift
