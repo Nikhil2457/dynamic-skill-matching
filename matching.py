@@ -4,7 +4,18 @@ from nltk.tokenize import word_tokenize
 import string
 nltk.data.path.append("./nltk_data")
 
-nltk.download('punkt', quiet=True)
+import os
+from nltk.data import find
+
+NLTK_DIR = os.path.join(os.path.dirname(__file__), "nltk_data")
+nltk.data.path.append(NLTK_DIR)
+
+# Check if punkt is already downloaded; if not, download it to your local nltk_data
+try:
+    find("tokenizers/punkt")
+except LookupError:
+    nltk.download("punkt", download_dir=NLTK_DIR)
+
 
 def extract_skills(text):
     """Improved skill extraction that handles comma-separated skills and filters out non-skill tokens"""
